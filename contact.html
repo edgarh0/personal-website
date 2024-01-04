@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
   <link href="./assets/favicon.ico" rel="icon">
   
-  <title>Title page</title>  
+  <title>Edgar Ho</title>  
 
 <link href="./main.3da94fde.css" rel="stylesheet"></head>
 
@@ -67,13 +67,17 @@
 </header>
 
 <div class="section-container">
-
-        <div class="template-example">
+  <form 
+    target="_blank"
+    action="https://formsubmit.co/edgar@edgarho.co.uk"
+    method="post"
+  >
+        <div class="contact-form">
           <h2 class="template-title-example">Contact Me</h2>
 
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
             </div>
 
             
@@ -89,7 +93,9 @@
             <div class="form-group">
               <textarea class="form-control" rows="3" placeholder="Enter your message"></textarea>
             </div>
-            <button>Send</button>
+            <input type="submit"/>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="index.html">
 
         </div>
 
@@ -99,11 +105,11 @@
       </div>
     </div>
   </div>
-
+</form>
 </div>
 
 
-
+</body>
 
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {
