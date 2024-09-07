@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open main.html",
-            "file": "c:\\Users\\Krelm\\Documents\\personal website\\personal-website\\main.html"
+            "name": "Open index.html",
+            "file": "c:\\Users\\Krelm\\Documents\\personal website\\personal-website\\index.html"
         }
     ]
 }
