@@ -272,7 +272,6 @@ input:checked + .slider:before {
                         <!-- FormSubmit.co Configuration -->
                         <input type="hidden" name="_subject" value="New submission from your website!">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
                         
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
@@ -305,6 +304,31 @@ input:checked + .slider:before {
     </footer>
 
     <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Thank you for your message! I will get back to you soon.');
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Oops! There was a problem submitting your form. Please try again.');
+            });
+        });
+        
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
         
