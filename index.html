@@ -116,6 +116,15 @@
     background-color: #2a2a2a !important;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding, 50px);
+}
+
+.section {
+    scroll-snap-align: start;
+}
+
 /* Dark Mode Toggle Styles */
 .dark-mode-toggle {
     display: flex;
@@ -207,7 +216,7 @@ input:checked + .slider:before {
 </div>
 </nav>
 
-    <section id="home" class="hero-section">
+    <section id="home" class="section hero-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-6">
@@ -341,6 +350,16 @@ input:checked + .slider:before {
         if (localStorage.getItem('darkMode') === 'true') {
             body.classList.add('dark-mode');
         }
+
+// Bootstrap initialization for navbar
+document.addEventListener('DOMContentLoaded', function () {
+    var navbarToggler = document.querySelector('.navbar-toggler');
+    var navbarCollapse = document.querySelector('.navbar-collapse');
+
+    navbarToggler.addEventListener('click', function () {
+        navbarCollapse.classList.toggle('show');
+    });
+});
         </script>
 </body>
 </html>
